@@ -1,0 +1,186 @@
+/* src/components/Shipment/Shipment.module.css */
+.createShipmentContainer,
+.shipmentListContainer {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.createShipmentContainer h2,
+.shipmentListContainer h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+.shipmentForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.shipmentForm .formGroup {
+  margin-bottom: 20px;
+}
+
+.shipmentForm .formGroup label {
+  display: block;
+  margin-bottom: 8px;
+  color: #555;
+  font-weight: 500;
+}
+
+.shipmentForm input[type="text"],
+.shipmentForm textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.shipmentForm input[type="text"]:focus,
+.shipmentForm textarea:focus {
+  outline: none;
+  border-color: #28a745;
+  box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.25);
+}
+
+.shipmentForm textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.shipmentForm .submitButton {
+  background-color: #28a745;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.shipmentForm .submitButton:hover {
+  background-color: #218838;
+}
+
+.success {
+  color: #28a745;
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.error {
+  color: #dc3545;
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.loading {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+  color: #666;
+}
+
+.noShipments {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+  color: #888;
+}
+
+.shipmentGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.shipmentCard {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  background-color: #fdfdfd;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.shipmentCard h3 {
+  color: #007bff;
+  margin-bottom: 15px;
+  font-size: 1.2em;
+}
+
+.shipmentCard p {
+  margin-bottom: 8px;
+  color: #444;
+  font-size: 0.95em;
+}
+
+.shipmentCard .statusBadge {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.85em;
+  color: #fff;
+}
+
+.shipmentCard .statusBadge.pending {
+  background-color: #ffc107; /* Yellow */
+  color: #333;
+}
+
+.shipmentCard .statusBadge.in-transit {
+  background-color: #007bff; /* Blue */
+}
+
+.shipmentCard .statusBadge.delivered {
+  background-color: #28a745; /* Green */
+}
+
+.shipmentCard .statusBadge.exception {
+  background-color: #dc3545; /* Red */
+}
+
+
+.shipmentCard .trackButton {
+  display: block;
+  width: fit-content;
+  margin-top: 15px;
+  padding: 8px 15px;
+  background-color: #6c757d;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.shipmentCard .trackButton:hover {
+  background-color: #5a6268;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .shipmentGrid {
+    grid-template-columns: 1fr; /* Single column on smaller screens */
+  }
+
+  .createShipmentContainer,
+  .shipmentListContainer {
+    margin: 20px auto;
+    padding: 20px;
+  }
+}

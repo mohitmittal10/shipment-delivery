@@ -1,0 +1,135 @@
+/* src/pages/Pages.module.css */
+.pageContainer {
+  max-width: 960px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+}
+
+.pageTitle {
+  font-size: 2.5em;
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.pageDescription {
+  font-size: 1.1em;
+  color: #666;
+  text-align: center;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.callToAction {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.callToAction p {
+  font-size: 1.1em;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.primaryButton,
+.secondaryButton,
+.tertiaryButton {
+  display: inline-block;
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  min-width: 200px;
+  text-align: center;
+}
+
+.primaryButton {
+  background-color: #007bff;
+  color: white;
+  border: 2px solid #007bff;
+}
+
+.primaryButton:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.secondaryButton {
+  background-color: #6c757d;
+  color: white;
+  border: 2px solid #6c757d;
+}
+
+.secondaryButton:hover {
+  background-color: #5a6268;
+  border-color: #5a6268;
+  transform: translateY(-2px);
+}
+
+.tertiaryButton {
+  background-color: transparent;
+  color: #007bff;
+  border: 2px solid #007bff;
+}
+
+.tertiaryButton:hover {
+  background-color: #e6f0ff;
+  color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.notFoundContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  text-align: center;
+}
+
+.notFoundTitle {
+  font-size: 4em;
+  color: #dc3545;
+  margin-bottom: 15px;
+}
+
+.notFoundDescription {
+  font-size: 1.3em;
+  color: #777;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+  .pageContainer {
+    margin: 20px auto;
+    padding: 20px;
+  }
+
+  .pageTitle {
+    font-size: 2em;
+  }
+
+  .pageDescription {
+    font-size: 1em;
+  }
+
+  .primaryButton,
+  .secondaryButton,
+  .tertiaryButton {
+    width: 90%;
+    padding: 10px 20px;
+  }
+
+  .notFoundTitle {
+    font-size: 3em;
+  }
+}
