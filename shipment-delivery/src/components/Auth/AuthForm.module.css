@@ -1,69 +1,123 @@
 /* src/components/Auth/AuthForm.module.css */
 .authContainer {
-  max-width: 400px;
-  margin: 50px auto;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+  max-width: 450px; /* Slightly wider container */
+  margin: 60px auto; /* More vertical margin */
+  padding: 40px; /* More padding */
+  border-radius: 12px; /* More rounded corners */
+  box-shadow: 0 8px 25px var(--shadow-medium); /* Deeper shadow */
+  background-color: var(--bg-white);
+  animation: fadeIn 0.5s ease-out; /* Fade-in animation */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .authContainer h2 {
   text-align: center;
-  color: #333;
-  margin-bottom: 25px;
+  color: var(--text-dark);
+  margin-bottom: 35px; /* More space below heading */
+  font-size: 2.2em;
+  font-weight: 700;
+  letter-spacing: -0.5px;
 }
 
 .authForm {
   display: flex;
   flex-direction: column;
+  gap: 20px; /* Consistent spacing between form groups */
 }
 
 .formGroup {
-  margin-bottom: 20px;
+  margin-bottom: 0; /* Handled by gap in authForm */
 }
 
 .formGroup label {
   display: block;
-  margin-bottom: 8px;
-  color: #555;
-  font-weight: 500;
+  margin-bottom: 10px; /* More space below label */
+  color: var(--text-medium);
+  font-weight: 600;
+  font-size: 1em;
 }
 
 .inputField {
   width: 100%;
-  padding: 12px 15px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  font-size: 16px;
-  box-sizing: border-box; /* Include padding in width */
+  padding: 14px 18px; /* More padding */
+  border: 2px solid var(--border-color); /* Thicker, subtle border */
+  border-radius: 8px; /* More rounded */
+  font-size: 1.1em;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .inputField:focus {
   outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 4px rgba(74, 144, 226, 0.2); /* More prominent focus shadow */
 }
 
 .submitButton {
-  background-color: #007bff;
+  background-color: var(--primary-color);
   color: white;
-  padding: 12px 20px;
+  padding: 15px 25px; /* More padding */
   border: none;
-  border-radius: 6px;
+  border-radius: 8px; /* More rounded */
   cursor: pointer;
-  font-size: 18px;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
+  font-size: 1.2em;
+  font-weight: 700;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  margin-top: 15px; /* Space above button */
+  box-shadow: 0 4px 10px rgba(74, 144, 226, 0.3);
 }
 
 .submitButton:hover {
-  background-color: #0056b3;
+  background-color: #3A7BBF; /* Slightly darker blue */
+  transform: translateY(-3px); /* Lift effect */
+  box-shadow: 0 6px 15px rgba(74, 144, 226, 0.4);
+}
+
+.submitButton:active {
+  transform: translateY(0); /* Press effect */
+  box-shadow: 0 2px 5px rgba(74, 144, 226, 0.2);
 }
 
 .error {
-  color: #dc3545;
+  color: var(--error-color);
   text-align: center;
-  margin-bottom: 15px;
-  font-size: 14px;
+  margin-top: 15px; /* Space above error */
+  font-size: 0.95em;
+  background-color: rgba(231, 76, 60, 0.1);
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid var(--error-color);
+  animation: shake 0.3s ease-in-out; /* Shake animation for errors */
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-5px); }
+  40%, 80% { transform: translateX(5px); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .authContainer {
+    margin: 30px 15px;
+    padding: 30px 20px;
+  }
+
+  .authContainer h2 {
+    font-size: 1.8em;
+  }
+
+  .inputField {
+    padding: 12px 15px;
+    font-size: 1em;
+  }
+
+  .submitButton {
+    padding: 12px 20px;
+    font-size: 1.1em;
+  }
 }

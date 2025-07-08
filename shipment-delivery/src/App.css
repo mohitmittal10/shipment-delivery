@@ -1,10 +1,17 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* src/App.css */
+
+/* No specific styles needed here for a modern design,
+   as general layout and component styles are handled
+   by other module CSS files and index.css.
+   This file can be used for global overrides if necessary. */
+
+/* Example: If you had a main content wrapper in App.js */
+.app-main-content {
+  flex-grow: 1; /* Ensures content pushes footer down */
+  padding: 20px; /* Add some padding around content */
 }
 
+/* Existing logo styles, if still relevant */
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -12,10 +19,10 @@
   transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em var(--primary-color));
 }
 .logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: drop-shadow(0 0 2em var(--secondary-color));
 }
 
 @keyframes logo-spin {
@@ -35,8 +42,10 @@
 
 .card {
   padding: 2em;
+  border-radius: 10px; /* Modern touch */
+  box-shadow: 0 4px 15px var(--shadow-light); /* Subtle shadow */
 }
 
 .read-the-docs {
-  color: #888;
+  color: var(--text-light);
 }
