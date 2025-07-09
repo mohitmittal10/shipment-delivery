@@ -1,6 +1,5 @@
-// src/components/UI/Button.js
 import React from 'react';
-import styles from './UI.module.css'; // Will create this CSS module
+import styles from './UI.module.css'; 
 
 const Button = ({ children, onClick, type = 'button', className, ...props }) => {
   return (

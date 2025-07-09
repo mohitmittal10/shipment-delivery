@@ -1,4 +1,3 @@
-// src/components/Layout/Header.js
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
@@ -7,7 +6,7 @@ import { signOut } from 'firebase/auth';
 import styles from './Layout.module.css';
 
 const Header = () => {
-  const { currentUser } = useAuth();
+  const { currentUser } = useAuth(); 
   const navigate = useNavigate();
 
   const handleLogout = async () => {
@@ -15,8 +14,7 @@ const Header = () => {
       await signOut(auth);
       navigate('/login');
     } catch (error) {
-      console.error('Error logging out:', error.message);
-    }
+      console.error("Logout error:", error);}
   };
 
   return (
@@ -30,7 +28,7 @@ const Header = () => {
             <Link to="/dashboard" className={styles.navLink}>Dashboard</Link>
             <Link to="/create-shipment" className={styles.navLink}>New Shipment</Link>
             <Link to="/track" className={styles.navLink}>Track Shipment</Link>
-            <span className={styles.welcomeText}>Hello, {currentUser.email}</span>
+            <span className={styles.welcomeText}>Hello, {currentUser.name || currentUser.email}</span>
             <button onClick={handleLogout} className={styles.logoutButton}>Logout</button>
           </>
         ) : (

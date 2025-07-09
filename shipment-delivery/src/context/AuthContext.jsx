@@ -1,7 +1,7 @@
-// src/context/AuthContext.js
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { auth } from '../firebase/firebaseConfig';
+import { auth, db } from '../firebase/firebaseConfig';
 import { onAuthStateChanged } from 'firebase/auth';
+import { doc, getDoc } from 'firebase/firestore';
 
 const AuthContext = createContext();
 
@@ -14,17 +14,27 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, user => {
-      setCurrentUser(user);
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        const userDocRef = doc(db, 'users', user.uid);
+        const userDocSnap = await getDoc(userDocRef);
+
+        if (userDocSnap.exists()) {
+          setCurrentUser({ ...user, ...userDocSnap.data() });
+        } else {
+          setCurrentUser(user);
+        }
+      } else {
+        setCurrentUser(null);
+      }
       setLoading(false);
     });
+
     return unsubscribe;
   }, []);
 
   const value = {
     currentUser,
-    // Add login and registration functions here
-    // e.g., login: (email, password) => signInWithEmailAndPassword(auth, email, password)
   };
 
   return (

@@ -1,12 +1,11 @@
-/* src/components/Auth/AuthForm.module.css */
 .authContainer {
-  max-width: 450px; /* Slightly wider container */
-  margin: 60px auto; /* More vertical margin */
-  padding: 40px; /* More padding */
-  border-radius: 12px; /* More rounded corners */
-  box-shadow: 0 8px 25px var(--shadow-medium); /* Deeper shadow */
+  max-width: 450px;
+  margin: 60px auto;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px var(--shadow-medium);
   background-color: var(--bg-white);
-  animation: fadeIn 0.5s ease-out; /* Fade-in animation */
+  animation: fadeIn 0.5s ease-out;
 }
 
 @keyframes fadeIn {
@@ -17,7 +16,7 @@
 .authContainer h2 {
   text-align: center;
   color: var(--text-dark);
-  margin-bottom: 35px; /* More space below heading */
+  margin-bottom: 35px;
   font-size: 2.2em;
   font-weight: 700;
   letter-spacing: -0.5px;
@@ -26,16 +25,17 @@
 .authForm {
   display: flex;
   flex-direction: column;
-  gap: 20px; /* Consistent spacing between form groups */
+  gap: 20px;
 }
 
 .formGroup {
-  margin-bottom: 0; /* Handled by gap in authForm */
+  margin-bottom: 0;
+  display: contents;
 }
 
 .formGroup label {
   display: block;
-  margin-bottom: 10px; /* More space below label */
+  margin-bottom: 10px;
   color: var(--text-medium);
   font-weight: 600;
   font-size: 1em;
@@ -43,9 +43,9 @@
 
 .inputField {
   width: 100%;
-  padding: 14px 18px; /* More padding */
-  border: 2px solid var(--border-color); /* Thicker, subtle border */
-  border-radius: 8px; /* More rounded */
+  padding: 14px 18px;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
   font-size: 1.1em;
   box-sizing: border-box;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -54,44 +54,44 @@
 .inputField:focus {
   outline: none;
   border-color: var(--primary-color);
-  box-shadow: 0 0 0 4px rgba(74, 144, 226, 0.2); /* More prominent focus shadow */
+  box-shadow: 0 0 0 4px rgba(74, 144, 226, 0.2);
 }
 
 .submitButton {
   background-color: var(--primary-color);
   color: white;
-  padding: 15px 25px; /* More padding */
+  padding: 15px 25px;
   border: none;
-  border-radius: 8px; /* More rounded */
+  border-radius: 8px;
   cursor: pointer;
   font-size: 1.2em;
   font-weight: 700;
   transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-  margin-top: 15px; /* Space above button */
+  margin-top: 15px;
   box-shadow: 0 4px 10px rgba(74, 144, 226, 0.3);
 }
 
 .submitButton:hover {
-  background-color: #3A7BBF; /* Slightly darker blue */
-  transform: translateY(-3px); /* Lift effect */
+  background-color: #3A7BBF;
+  transform: translateY(-3px);
   box-shadow: 0 6px 15px rgba(74, 144, 226, 0.4);
 }
 
 .submitButton:active {
-  transform: translateY(0); /* Press effect */
+  transform: translateY(0);
   box-shadow: 0 2px 5px rgba(74, 144, 226, 0.2);
 }
 
 .error {
   color: var(--error-color);
   text-align: center;
-  margin-top: 15px; /* Space above error */
+  margin-top: 15px;
   font-size: 0.95em;
   background-color: rgba(231, 76, 60, 0.1);
   padding: 10px;
   border-radius: 6px;
   border: 1px solid var(--error-color);
-  animation: shake 0.3s ease-in-out; /* Shake animation for errors */
+  animation: shake 0.3s ease-in-out;
 }
 
 @keyframes shake {
@@ -100,7 +100,6 @@
   40%, 80% { transform: translateX(5px); }
 }
 
-/* Responsive adjustments */
 @media (max-width: 600px) {
   .authContainer {
     margin: 30px 15px;

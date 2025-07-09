@@ -1,6 +1,5 @@
-// src/pages/DashboardPage.jsx
 import React from 'react';
-import ShipmentList from '../components/Shipment/ShipmentList.jsx'; // Ensure .jsx extension if you renamed it
+import ShipmentList from '../components/Shipment/ShipmentList.jsx'; 
 import styles from './Pages.module.css';
 
 const DashboardPage = () => {
@@ -13,4 +12,4 @@ const DashboardPage = () => {
   );
 };
 
-export default DashboardPage; // <-- THIS LINE IS CRUCIAL FOR THE DEFAULT EXPORT
+export default DashboardPage; 

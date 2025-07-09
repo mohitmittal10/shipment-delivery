@@ -1,6 +1,5 @@
-// src/components/UI/Input.js
 import React from 'react';
-import styles from './UI.module.css'; // Will create this CSS module
+import styles from './UI.module.css'; 
 
 const Input = ({ label, id, type = 'text', value, onChange, required, className, ...props }) => {
   return (

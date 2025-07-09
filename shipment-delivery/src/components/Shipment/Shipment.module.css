@@ -1,14 +1,11 @@
-/* src/components/Shipment/Shipment.module.css */
-
 .createShipmentContainer,
 .shipmentListContainer {
-  max-width: 1000px; /* Consistent with pageContainer */
-  margin: 50px auto;
+  max-width: 1000px;
   padding: 40px;
   border-radius: 15px;
   box-shadow: 0 10px 30px var(--shadow-medium);
   background-color: var(--bg-white);
-  animation: fadeIn 0.6s ease-out; /* Consistent fade-in */
+  animation: fadeIn 0.6s ease-out;
 }
 
 @keyframes fadeIn {
@@ -28,11 +25,12 @@
 .shipmentForm {
   display: flex;
   flex-direction: column;
-  gap: 20px; /* Spacing between form groups */
+  gap: 20px;
 }
 
 .shipmentForm .formGroup {
-  margin-bottom: 0; /* Handled by gap */
+  margin-bottom: 0;
+  display: flex;
 }
 
 .shipmentForm .formGroup label {
@@ -45,7 +43,7 @@
 
 .shipmentForm input[type="text"],
 .shipmentForm textarea,
-.shipmentForm select { /* Added select for future use if needed */
+.shipmentForm select {
   width: 100%;
   padding: 14px 18px;
   border: 2px solid var(--border-color);
@@ -59,17 +57,17 @@
 .shipmentForm textarea:focus,
 .shipmentForm select:focus {
   outline: none;
-  border-color: var(--secondary-color); /* Teal focus for forms */
+  border-color: var(--secondary-color);
   box-shadow: 0 0 0 4px rgba(80, 227, 194, 0.25);
 }
 
 .shipmentForm textarea {
   resize: vertical;
-  min-height: 100px; /* Slightly taller default */
+  min-height: 100px;
 }
 
 .shipmentForm .submitButton {
-  background-color: var(--secondary-color); /* Teal submit button */
+  background-color: var(--secondary-color);
   color: white;
   padding: 15px 25px;
   border: none;
@@ -78,12 +76,12 @@
   font-size: 1.2em;
   font-weight: 700;
   transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-  margin-top: 20px; /* More space above button */
+  margin-top: 20px;
   box-shadow: 0 4px 10px rgba(80, 227, 194, 0.3);
 }
 
 .shipmentForm .submitButton:hover {
-  background-color: #40C6A9; /* Slightly darker teal */
+  background-color: #40C6A9;
   transform: translateY(-3px);
   box-shadow: 0 6px 15px rgba(80, 227, 194, 0.4);
 }
@@ -146,23 +144,23 @@
 
 .shipmentGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Slightly larger cards */
-  gap: 30px; /* More space between cards */
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
   margin-top: 30px;
 }
 
 .shipmentCard {
   background-color: var(--bg-white);
   border: 1px solid var(--border-color);
-  border-radius: 12px; /* More rounded */
-  padding: 30px; /* More padding */
-  box-shadow: 0 6px 20px var(--shadow-light); /* Deeper shadow */
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smoother transitions */
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 6px 20px var(--shadow-light);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  position: relative; /* For potential future badge positioning */
-  overflow: hidden; /* Ensures rounded corners are respected */
+  position: relative;
+  overflow: hidden;
 }
 
 .shipmentCard::before {
@@ -171,22 +169,22 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 5px; /* Top border accent */
-  background-color: var(--primary-color); /* Default accent color */
+  height: 5px;
+  background-color: var(--primary-color);
   transition: background-color 0.3s ease;
 }
 
 .shipmentCard:hover {
-  transform: translateY(-8px); /* More pronounced lift */
-  box-shadow: 0 12px 30px var(--shadow-medium); /* Stronger shadow on hover */
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px var(--shadow-medium);
 }
 
 .shipmentCard h3 {
   color: var(--text-dark);
   margin-bottom: 15px;
-  font-size: 1.6em; /* Larger heading */
+  font-size: 1.6em;
   font-weight: 700;
-  border-bottom: none; /* Remove old border */
+  border-bottom: none;
   padding-bottom: 0;
 }
 
@@ -202,49 +200,48 @@
 
 .shipmentCard .statusBadge {
   display: inline-block;
-  padding: 8px 15px; /* More padding */
-  border-radius: 25px; /* Pill shape */
+  padding: 8px 15px;
+  border-radius: 25px;
   font-weight: 700;
   font-size: 0.9em;
   text-transform: uppercase;
   color: white;
   text-align: center;
-  margin-top: 10px; /* Space from previous content */
-  align-self: flex-start; /* Align to left in flex column */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow on badge */
+  margin-top: 10px;
+  align-self: flex-start;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* Status specific colors for badge and card accent */
 .shipmentCard .statusBadge.pending, .shipmentCard.pending::before {
-  background-color: var(--warning-color); /* Orange */
+  background-color: var(--warning-color);
 }
 
 .shipmentCard .statusBadge.shipped, .shipmentCard.shipped::before {
-  background-color: #3498DB; /* Light Blue */
+  background-color: #3498DB;
 }
 
 .shipmentCard .statusBadge.in-transit, .shipmentCard.in-transit::before {
-  background-color: var(--primary-color); /* Vibrant Blue */
+  background-color: var(--primary-color);
 }
 
 .shipmentCard .statusBadge.delivered, .shipmentCard.delivered::before {
-  background-color: var(--success-color); /* Green */
+  background-color: var(--success-color);
 }
 
 .shipmentCard .statusBadge.exception, .shipmentCard.exception::before {
-  background-color: var(--error-color); /* Red */
+  background-color: var(--error-color);
 }
 
 .shipmentCard .statusBadge.cancelled, .shipmentCard.cancelled::before {
-  background-color: var(--text-light); /* Grey */
+  background-color: var(--text-light);
 }
 
 .shipmentCard .trackButton {
   display: block;
-  width: 100%; /* Full width button */
-  margin-top: 20px; /* More space */
+  width: 100%;
+  margin-top: 20px;
   padding: 12px 20px;
-  background-color: var(--primary-color); /* Consistent primary button color */
+  background-color: var(--primary-color);
   color: white;
   text-align: center;
   border-radius: 8px;
@@ -260,12 +257,11 @@
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-/* Styles for the input group on TrackingPage */
 .inputGroup {
   display: flex;
-  gap: 15px; /* More space between input and button */
-  margin: 40px auto; /* More vertical margin */
-  max-width: 700px; /* Wider input group */
+  gap: 15px;
+  margin: 40px auto;
+  max-width: 700px;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
@@ -273,14 +269,14 @@
 
 .inputField {
   flex-grow: 1;
-  padding: 15px 20px; /* More padding */
+  padding: 15px 20px;
   border: 2px solid var(--border-color);
-  border-radius: 10px; /* More rounded */
-  font-size: 1.15em; /* Slightly larger font */
+  border-radius: 10px;
+  font-size: 1.15em;
   color: var(--text-dark);
   outline: none;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  min-width: 280px; /* Ensure input is not too small */
+  min-width: 280px;
 }
 
 .inputField:focus {
@@ -288,7 +284,6 @@
   box-shadow: 0 0 0 4px rgba(74, 144, 226, 0.25);
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .shipmentGrid {
     grid-template-columns: 1fr;

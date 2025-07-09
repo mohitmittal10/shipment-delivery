@@ -1,4 +1,3 @@
-// src/pages/CreateShipmentPage.js
 import React from 'react';
 import CreateShipment from '../components/Shipment/CreateShipment';
 import styles from './Pages.module.css';

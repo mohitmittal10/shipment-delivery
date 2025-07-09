@@ -1,4 +1,3 @@
-// src/components/Auth/Login.js
 import React, { useState } from 'react';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../firebase/firebaseConfig';
@@ -28,9 +27,10 @@ const Login = () => {
       <form onSubmit={handleSubmit} className={styles.authForm}>
         {error && <p className={styles.error}>{error}</p>}
         <div className={styles.formGroup}>
-          <label>Email:</label>
+          
           <input
             type="email"
+            placeholder='Enter your email'
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
@@ -38,9 +38,9 @@ const Login = () => {
           />
         </div>
         <div className={styles.formGroup}>
-          <label>Password:</label>
           <input
             type="password"
+            placeholder='Enter your password'
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required

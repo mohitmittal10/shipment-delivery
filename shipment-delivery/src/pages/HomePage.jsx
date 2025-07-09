@@ -1,8 +1,7 @@
-// src/pages/HomePage.js
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import styles from './Pages.module.css'; // Will create this CSS module
+import styles from './Pages.module.css'; 
 
 const HomePage = () => {
   const { currentUser } = useAuth();

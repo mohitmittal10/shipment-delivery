@@ -1,18 +1,15 @@
-/* src/index.css */
-
-/* Import Google Font - Inter */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  --primary-color: #4A90E2; /* A vibrant blue */
-  --secondary-color: #50E3C2; /* A refreshing teal */
-  --accent-color: #F5A623; /* A warm orange for highlights/warnings */
-  --text-dark: #2C3E50; /* Dark text for headings */
-  --text-medium: #555; /* Medium text for paragraphs */
-  --text-light: #7F8C8D; /* Light text for descriptions */
-  --bg-light: #F8F9FA; /* Light background for sections */
-  --bg-white: #FFFFFF; /* Pure white for cards/containers */
-  --border-color: #E0E6ED; /* Light border for elements */
+  --primary-color: #4A90E2;
+  --secondary-color: #50E3C2;
+  --accent-color: #F5A623;
+  --text-dark: #2C3E50;
+  --text-medium: #555;
+  --text-light: #7F8C8D;
+  --bg-light: #F8F9FA;
+  --bg-white: #FFFFFF;
+  --border-color: #E0E6ED;
   --shadow-light: rgba(0, 0, 0, 0.05);
   --shadow-medium: rgba(0, 0, 0, 0.1);
   --success-color: #2ECC71;
@@ -25,13 +22,12 @@ body {
   font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--bg-light); /* Light grey background */
+  background-color: var(--bg-light);
   color: var(--text-medium);
   line-height: 1.6;
-  scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+  scroll-behavior: smooth;
 }
 
-/* Basic reset */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -39,20 +35,19 @@ body {
 }
 
 html, body, #root {
-  min-height: 100%; /* Ensure root takes full height */
+  min-height: 100%;
   display: flex;
   flex-direction: column;
 }
 
 #root {
-  flex-grow: 1; /* Allow root to grow and push footer down */
-  max-width: 1400px; /* Slightly wider max-width for content */
-  margin: 0 auto;
-  padding: 0; /* Remove padding from root to allow full-width header/footer */
-  text-align: center; /* Adjust as needed, pages will override */
+  flex-grow: 1;
+  max-width: 1400px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
 }
 
-/* General link styling */
 a {
   color: var(--primary-color);
   text-decoration: none;
@@ -64,8 +59,11 @@ a:hover {
   text-decoration: underline;
   transform: translateY(-1px);
 }
+button:hover {
+  cursor: pointer;
+  transform: translateY(-1px);
 
-/* Utility classes for consistency */
+}
 .text-center { text-align: center; }
 .mt-4 { margin-top: 1.5rem; }
 .mb-4 { margin-bottom: 1.5rem; }

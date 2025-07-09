@@ -1,9 +1,8 @@
-// src/components/Shipment/CreateShipment.js
 import React, { useState } from 'react';
 import { db } from '../../firebase/firebaseConfig';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { useAuth } from '../../context/AuthContext';
-import styles from './Shipment.module.css'; // Create this CSS module
+import styles from './Shipment.module.css'; 
 
 const CreateShipment = () => {
   const { currentUser } = useAuth();
@@ -11,7 +10,7 @@ const CreateShipment = () => {
   const [receiverName, setReceiverName] = useState('');
   const [packageSize, setPackageSize] = useState('');
   const [deliveryAddress, setDeliveryAddress] = useState('');
-  const [status, setStatus] = useState('Pending'); // Initial status
+  const [status, setStatus] = useState('Pending'); 
   const [message, setMessage] = useState('');
 
   const handleSubmit = async (e) => {
@@ -31,7 +30,7 @@ const CreateShipment = () => {
         packageSize,
         deliveryAddress,
         status,
-        trackingId: Math.random().toString(36).substring(2, 10).toUpperCase(), // Simple unique ID
+        trackingId: Math.random().toString(36).substring(2, 10).toUpperCase(), 
         createdAt: serverTimestamp(),
         updatedAt: serverTimestamp(),
       });
@@ -48,7 +47,7 @@ const CreateShipment = () => {
 
   return (
     <div className={styles.createShipmentContainer}>
-      <h2>Create New Shipment</h2>
+      
       <form onSubmit={handleSubmit} className={styles.shipmentForm}>
         {message && <p className={message.includes('Error') ? styles.error : styles.success}>{message}</p>}
         <div className={styles.formGroup}>

@@ -1,11 +1,12 @@
-// src/components/Auth/Register.js
 import React, { useState } from 'react';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../../firebase/firebaseConfig';
+import { doc, setDoc } from 'firebase/firestore';
+import { auth, db } from '../../firebase/firebaseConfig';
 import { useNavigate } from 'react-router-dom';
-import styles from './AuthForm.module.css'; // Create this CSS module
+import styles from './AuthForm.module.css';
 
 const Register = () => {
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -15,8 +16,16 @@ const Register = () => {
     e.preventDefault();
     setError('');
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
-      navigate('/dashboard'); // Redirect to dashboard after successful registration
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+
+      await setDoc(doc(db, 'users', user.uid), {
+        name: name,
+        email: email,
+        createdAt: new Date(),
+      });
+
+      navigate('/dashboard');
     } catch (err) {
       setError(err.message);
     }
@@ -28,19 +37,25 @@ const Register = () => {
       <form onSubmit={handleSubmit} className={styles.authForm}>
         {error && <p className={styles.error}>{error}</p>}
         <div className={styles.formGroup}>
-          <label>Email:</label>
+          <input
+            type="text"
+            value={name}
+            placeholder='Enter your name'
+            onChange={(e) => setName(e.target.value)}
+            required
+            className={styles.inputField}
+          />
           <input
             type="email"
+            placeholder='Enter your email'
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
             className={styles.inputField}
           />
-        </div>
-        <div className={styles.formGroup}>
-          <label>Password:</label>
           <input
             type="password"
+            placeholder='Enter your password'
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required

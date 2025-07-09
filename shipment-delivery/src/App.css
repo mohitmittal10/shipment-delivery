@@ -1,17 +1,9 @@
-/* src/App.css */
 
-/* No specific styles needed here for a modern design,
-   as general layout and component styles are handled
-   by other module CSS files and index.css.
-   This file can be used for global overrides if necessary. */
-
-/* Example: If you had a main content wrapper in App.js */
 .app-main-content {
-  flex-grow: 1; /* Ensures content pushes footer down */
-  padding: 20px; /* Add some padding around content */
+  flex-grow: 1; 
+  padding: 20px; 
 }
 
-/* Existing logo styles, if still relevant */
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -42,8 +34,8 @@
 
 .card {
   padding: 2em;
-  border-radius: 10px; /* Modern touch */
-  box-shadow: 0 4px 15px var(--shadow-light); /* Subtle shadow */
+  border-radius: 10px; 
+  box-shadow: 0 4px 15px var(--shadow-light); 
 }
 
 .read-the-docs {

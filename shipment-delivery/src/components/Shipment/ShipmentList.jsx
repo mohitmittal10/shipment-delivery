@@ -1,9 +1,8 @@
-// src/components/Shipment/ShipmentList.js
 import React, { useEffect, useState } from 'react';
 import { db } from '../../firebase/firebaseConfig';
 import { collection, query, where, orderBy, onSnapshot } from 'firebase/firestore';
-import { useAuth } from '../../context/AuthContext'; // Adjust the path as necessary
-import ShipmentItem from './ShipmentItem'; // Will create this
+import { useAuth } from '../../context/AuthContext';
+import ShipmentItem from './ShipmentItem';
 import styles from './Shipment.module.css';
 
 const ShipmentList = () => {
@@ -41,7 +40,7 @@ const ShipmentList = () => {
       }
     );
 
-    return () => unsubscribe(); // Cleanup on unmount
+    return () => unsubscribe();
   }, [currentUser]);
 
   if (loading) return <p className={styles.loading}>Loading shipments...</p>;
